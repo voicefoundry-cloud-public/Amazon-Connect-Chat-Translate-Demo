@@ -17,7 +17,7 @@ exports.handler = async function(event, context, callback) {
           MergeStrategy: 'OVERWRITE', 
           Name: 'connectChatTranslate', 
           TerminologyData: { 
-            File: Buffer.from(customTerminology) || 'STRING_VALUE' 
+            File: Buffer.from(customTerminology) || 'STRING_VALUE',
             Format: 'CSV' 
           },
           Description: 'Custom Terminology for Amazon Connect Chat sample web app',
