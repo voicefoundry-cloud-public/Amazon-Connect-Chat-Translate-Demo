@@ -167,12 +167,13 @@
                   }
                 ]
               }
-            },{
+            },
+            {
               "Sid": "CustomTerminology",
               "Effect": "Allow",
               "Action": [
-                  "translate:DeleteTerminology",
-                  "translate:ImportTerminology"
+                "translate:DeleteTerminology",
+                "translate:ImportTerminology"
               ],
               "Resource": "*"
             }

@@ -192,7 +192,7 @@ const Ccp = () => {
         window.connect.agentApp.initApp(
             "ccp",
             "ccp-container",
-            connectUrl + "/ccp-v2/", { 
+            connectUrl + "/connect/ccp-v2/", { 
                 ccpParams: { 
                     region: process.env.REACT_APP_CONNECT_REGION,
                     pageOptions: {                  // optional

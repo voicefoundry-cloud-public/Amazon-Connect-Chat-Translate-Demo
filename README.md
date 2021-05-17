@@ -4,11 +4,11 @@ This is a sample project that demonstrates using Amazon Translate with Amazon Co
 
 Demo
 
-<img src="./artifacts/TranslateDemo.gif" width="500" height="400">
+<img src="./artifacts/TranslateDemo.gif" width="50%">
 
 Architecture
 
-<img src="./artifacts/Arch.png" width="500" height="400">
+<img src="./artifacts/Arch.png" width="50%" >
 
 ## Pre-Reqs
 
@@ -26,10 +26,15 @@ Click the below button
 
 Expand `Environment variables` and add the below 2
 
-- `REACT_APP_CONNECT_REGION` = `'AWS Region'`  (Example `eu-west-2`)
-- `REACT_APP_CONNECT_INSTANCE_URL` = `'Amazon Connect URL'` (Example `https://<<INSTANCE_NAME>>.awsapps.com/connect`)
+- `REACT_APP_CONNECT_REGION` = `AWS Region`  (Example `eu-west-2`)
+- `REACT_APP_CONNECT_INSTANCE_URL` = `Amazon Connect URL` (Example `https://<<INSTANCE_NAME>>.awsapps.com` or `https://<<INSTANCE_NAME>>.my.connect.aws`)
+
+<img src="./artifacts/Environment variables.png" width="50%">
+
 
 Once the app is ready, about 8 mins, you then need to update the allow the WebApp to allow CCP to be loaded as an iFrame.
+
+<img src="./artifacts/Web app deployed.png" width="50%">
 
 * Navigate to the Amazon Connect console, and select on your Amazon Connect instance name
 * Goto `Approved origins` then `+ Add origin`
