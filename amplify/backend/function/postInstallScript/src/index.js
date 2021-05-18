@@ -10,7 +10,7 @@ exports.handler = async function(event, context, callback) {
         
         var customTerminology = [
         '"en","es","de"',
-        '"Moonlight and Roses","Moonlight y Roses","Moonlight und Roses"'
+        '"Sunshine and Oranges","Sunshine y Oranges","Sunshine und Oranges"'
          ].join('\n');
         
         var createTerminologyParams = {
