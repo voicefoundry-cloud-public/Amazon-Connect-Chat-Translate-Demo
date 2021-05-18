@@ -1,7 +1,5 @@
 const AWS = require('aws-sdk');
-AWS.config.update({
-  region: 'eu-west-2'
-});
+
 const translate = new AWS.Translate({ apiVersion: '2017-07-01' }); // Fix API version (best practice)
 
 exports.handler = (event, context, callback) => {
