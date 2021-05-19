@@ -60,7 +60,8 @@ Testing
     * Go to https://console.aws.amazon.com/translate/home?#terminology
     * Click on the radio button next to `connectChatTranslate`
     * Download the CSV
-    * Edit 
+    * Edit the CSV, by adding additional rows. 'en' as the source language and using the columns for the destination language (Feel free to add additional languages in column D onwards)
+    * <img src="./artifacts/connectChatTranslate.png" width="50%">
     * Update the `connectChatTranslate` custom terminologies with the updated CSV
   * For more information visit: https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html
 
@@ -76,7 +77,36 @@ Testing
 
 All the services used are included within the [AWS Free tier](https://aws.amazon.com/free/) offer. However, should you exceed this you will be charged for the services consumed. Please see the [clean up](https://github.com/TTEC-Dig-VF/Amazon-Connect-Chat-Translate-Demo#clean-up) section to delete all deployed infrastructure.
 
+Outside of free tier you will be charged for the consumption of the services used. For example.
 
+[Amazon Connect Pricing](https://aws.amazon.com/connect/pricing/) for chat is : $0.004 per message
+[Amazon Translate Pricing](https://aws.amazon.com/translate/pricing/) : $15 per million characters
+[Amazon API Gateway](https://aws.amazon.com/api-gateway/pricing/) : $1 per per million requests
+[AWS Lambda](https://aws.amazon.com/lambda/pricing/) : $0.20 per million requests
+[AWS Amplify ](https://aws.amazon.com/amplify/pricing/?nc=sn&loc=3) : $0.01 per build minute and $0.23 per GB stored per month and $0.15 per GB served 
+
+<ins>Therefore a very approximate cost for 100 users for a month</ins>, handling 59 chats per day each for 21 days (a month) we have:
+
+| Service             | Costs (Month) |
+|---------------------|---------------|
+| Amacon Connect Chat |  $8,400.00    |
+| Amazon Translate    |  $425.25      |
+| Amazon Comprehend   |  $63.00       |
+| Amazon API Gateway  |  $2.10        |
+| AWS Lambda          |  $0.22        |
+| Amplify Build       |  $0.08        |
+| Amplify Hosting     |  $0.01        |
+| Amplify Served      |  $0.37        |
+|                     |               |
+| Total               |  $8,891.03    |
+
+ Assumptions. 
+ 
+ - 30% of messages are translated
+ - 15% of the chats require language detection
+ - 10 Page loads per user per day
+ - 150 charcters average message size for translation
+ - Average messaged per chat 17
 ### Todo
 
 * More testing & code clean up
