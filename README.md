@@ -29,6 +29,8 @@ Expand `Environment variables` and add the below 2
 - `REACT_APP_CONNECT_REGION` = `AWS Region`  (Example `eu-west-2`)
 - `REACT_APP_CONNECT_INSTANCE_URL` = `Amazon Connect URL` (Example `https://<<INSTANCE_NAME>>.awsapps.com` or `https://<<INSTANCE_NAME>>.my.connect.aws`)
 
+[Important, if you copy and paste, ensure there are no trailing whitespaces in the above 2 variable keys, or values. This will cause the web app to not load CCP and a rebuild will be required]
+
 <img src="./artifacts/Environment variables.png" width="50%">
 
 
@@ -38,7 +40,7 @@ Once the app is ready, about 8 mins, you then need to update the allow the WebAp
 
 * Navigate to the Amazon Connect console, and select on your Amazon Connect instance name
 * Goto `Approved origins` then `+ Add origin`
-* Enter the URL that Amplify generated for you, then click `Add`  (Example URL `https://main.d13aaabbbccc.amplifyapp.com`)
+* Enter the URL that Amplify generated for you, then click `Add`  (Example URL `https://main.d13aaabbbccc.amplifyapp.com`, if necessary remove the trailing '/')
 
 Testing
 
