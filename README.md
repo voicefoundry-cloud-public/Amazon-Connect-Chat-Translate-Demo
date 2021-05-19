@@ -63,7 +63,7 @@ Testing
 ### Features
 
 * The web app looks for a contact attribute of `x_lang` if set then the language will be set accordingly. (Supported languages for translation: https://docs.aws.amazon.com/translate/latest/dg/what-is.html)
-* If no `x_lang` contact attribute is set, the FIRST message from the customer will be used to perform language detection using Amazon Comprehend. (Supported languages for detection: https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+* If no `x_lang` contact attribute is set, the FIRST message from the customer will be used to perform language detection using Amazon Comprehend. (Supported languages for detection: https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html)
 * Agent side is hardcoded to `'en'`
 
 ### Costs
