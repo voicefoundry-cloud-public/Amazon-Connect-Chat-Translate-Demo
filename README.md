@@ -4,16 +4,18 @@ This is a sample project that demonstrates using Amazon Translate with Amazon Co
 
 Demo
 
-<img src="./artifacts/TranslateDemo.gif" width="50%">
+<img src="./artifacts/TranslateDemo.gif" width="75%">
 
 Architecture
 
-<img src="./artifacts/Arch.png" width="50%" >
+<img src="./artifacts/Arch.png" width="75%" >
+
 
 ## Pre-Reqs
 
 - Existing Amazon Connect Instance ([Create an instance in 3 easy steps](https://docs.aws.amazon.com/connect/latest/adminguide/tutorial1-set-up-your-instance.html))
 - Github account ([Create a free GitHub account](https://github.com/join))
+
 
 ### Install
 
@@ -31,14 +33,14 @@ Expand `Environment variables` and add the below 2
 
 [Important, if you copy and paste, ensure there are no trailing whitespaces in the above 2 variable keys, or values. This will cause the web app to not load CCP and a rebuild will be required]
 
-<img src="./artifacts/Environment variables.png" width="50%">
+<img src="./artifacts/Environment variables.png" width="75%">
 
 
-Once the app is ready, about 8 mins, you then need to update the allow the WebApp to allow CCP to be loaded as an iFrame.
+Once the app is ready, about 8 mins, you then need to update the allow list within the Amazon Connect Console to allow the WebApp to host CCP as an iFrame.
 
-<img src="./artifacts/Web app deployed.png" width="50%">
+<img src="./artifacts/Web app deployed.png" width="75%">
 
-* Navigate to the Amazon Connect console, and select on your Amazon Connect instance name
+* Navigate to the Amazon Connect console (AWS), and select on your Amazon Connect instance name
 * Goto `Approved origins` then `+ Add origin`
 * Enter the URL that Amplify generated for you, then click `Add`  (Example URL `https://main.d13aaabbbccc.amplifyapp.com`, if necessary remove the trailing '/')
 
@@ -49,6 +51,7 @@ Testing
 * Connect through to your agent that's running the new WebApp
 * As the customer type some text in French and you'll see the agent translate app show 'Translate - (fr) French' 
 * As the agent type in English into the translate textbox and press enter. This will be converted to french and sent back to the customer as french
+
 
 ### Custom Terminologies
 
@@ -68,9 +71,12 @@ Testing
 * If no `x_lang` contact attribute is set, the FIRST message from the customer will be used to perform language detection using Amazon Comprehend. (Supported languages for detection: https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html)
 * Agent side is hardcoded to `'en'`
 
+
 ### Costs
 
 All the services used are included within the [AWS Free tier](https://aws.amazon.com/free/) offer. However, should you exceed this you will be charged for the services consumed. Please see the [clean up](https://github.com/TTEC-Dig-VF/Amazon-Connect-Chat-Translate-Demo#clean-up) section to delete all deployed infrastructure.
+
+
 ### Todo
 
 * More testing & code clean up
