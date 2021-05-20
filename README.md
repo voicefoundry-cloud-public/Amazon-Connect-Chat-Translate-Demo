@@ -98,15 +98,17 @@ Outside of free tier you will be charged for the consumption of the services use
 | Amplify Hosting     |  $0.01        |
 | Amplify Served      |  $0.37        |
 |                     |               |
-| Total               |  $8,891.03    |
+| Total (124k chats)  |  $8,891.03    |
 
  Assumptions. 
  
  - 30% of messages are translated
  - 15% of the chats require language detection
  - 10 Page loads per user per day
- - 150 charcters average message size for translation
- - Average messaged per chat 17
+ - 150 characters average message size for translation
+ - Average messages per chat 17
+
+
 ### Todo
 
 * More testing & code clean up
