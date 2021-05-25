@@ -6,12 +6,12 @@ exports.handler = (event, context, callback) => {
   let payload = JSON.parse(event.body);
   console.log("event: ", event);
   console.log("event: ", payload.terminologyNames);
-  // body: '{"content":"hello","sourceLang":"en","tagretLang":"en"}'
+  // body: '{"content":"hello","sourceLang":"en","targetLang":"en"}'
 
   let params = {
     SourceLanguageCode: payload.sourceLang,
     /* required */
-    TargetLanguageCode: payload.tagretLang,
+    TargetLanguageCode: payload.targetLang,
     /* required */
     Text: payload.content,
     /* required */
