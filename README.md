@@ -1,3 +1,6 @@
+[![Known Vulnerabilities](https://snyk.io/test/github/TTEC-Dig-VF/Amazon-Connect-Chat-Translate-Demo/badge.svg)](https://snyk.io/test/github/TTEC-Dig-VF/Amazon-Connect-Chat-Translate-Demo)
+
+
 # Translate CCP Demo for Amazon Connect
 
 This is a sample project that demonstrates using Amazon Translate with Amazon Connect chat to perform real-time translation on chat messages, allowing a user to support dozens of languages. The web app supports multi-chat allow an Amazon COnnect Chat user to support multiple languages concurrently. Deployment is using the Amplify UI (No CLI access required) and is using serverless architecture. Deployment takes about 10 minutes. 
