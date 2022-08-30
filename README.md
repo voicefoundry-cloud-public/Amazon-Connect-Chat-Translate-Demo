@@ -26,7 +26,7 @@ Architecture
 
 Click the below button
 
-[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/TTEC-Dig-VF/Amazon-Connect-Chat-Translate-Demo)
+[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/voicefoundry-cloud-public/Amazon-Connect-Chat-Translate-Demo)
 
 - Connect to Github
 - Click on 'Create new role' then `Next: Permissions` > `Next: Tags` > `Next: Review` finally `Create role`
