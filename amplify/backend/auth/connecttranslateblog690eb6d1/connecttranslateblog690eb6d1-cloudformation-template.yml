@@ -282,9 +282,7 @@ Resources:
       Handler: index.handler
       Runtime: nodejs18.x
       Timeout: '300'
-      Role: !GetAtt
-        - UserPoolClientRole
-        - Arn
+      Role: !GetAtt UserPoolClientRole.Arn
     DependsOn: UserPoolClientRole
   UserPoolClientLambdaPolicy:
   # Sets userpool policy for the role that executes the Userpool Client Lambda
