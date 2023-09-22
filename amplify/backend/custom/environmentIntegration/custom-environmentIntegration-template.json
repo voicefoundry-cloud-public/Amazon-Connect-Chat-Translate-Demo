@@ -1,25 +1,25 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "Kinesis resource stack creation using Amplify CLI",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"12.4.0\",\"stackType\":\"custom-Custom::customhelper\",\"metadata\":{}}",
   "Parameters": {
     "env": {
-        "Type":  "String"
+      "Type": "String"
     },
     "functionpostInstallScriptName": {
-        "Type":  "String"
+      "Type": "String"
     },
     "functionpostInstallScriptArn": {
-      "Type":  "String"
+      "Type": "String"
     }
-},
+  },
   "Resources": {
-      "environmentIntegration": {
-          "Type": "Custom::customhelper",
-          "Properties" : {
-            "ServiceToken": { 
-              "Ref" : "functionpostInstallScriptArn"
-            }
-          }
+    "environmentIntegration": {
+      "Type": "Custom::customhelper",
+      "Properties": {
+        "ServiceToken": {
+          "Ref": "functionpostInstallScriptArn"
+        }
       }
+    }
   }
 }
