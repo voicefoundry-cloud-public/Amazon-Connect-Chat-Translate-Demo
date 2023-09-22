@@ -7,34 +7,33 @@ This is a sample project that demonstrates using Amazon Translate with Amazon Co
 
 Read the Amazon blog: https://www.amazon.com/livechattranslate 
 
-Demo
+### Demo
 
 <img src="./artifacts/TranslateDemo.gif" width="75%">
 
-Architecture
+### Architecture
 
 <img src="./artifacts/Arch.png" width="75%" >
 
 
-## Pre-Reqs
+### Pre-Reqs
 
 - Existing Amazon Connect Instance ([Create an instance in 3 easy steps](https://docs.aws.amazon.com/connect/latest/adminguide/tutorial1-set-up-your-instance.html))
 - Github account ([Create a free GitHub account](https://github.com/join))
 
 
-### Install
+### Deploy
 
-Click the below button
-
-[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/vishal-dms/Amazon-Connect-Chat-Translate-Demo)
-
+- Fork this repository in your Github account  
+- Navigate to [Amplify Console](https://console.aws.amazon.com/amplify/)
+- Get Started with Amplify Hosting
 - Connect to Github
+- Select repository - `Amazon-Connect-Chat-Translate-Demo`
 - Click on 'Create new role' then `Next: Permissions` > `Next: Tags` > `Next: Review` finally `Create role`
-
-Expand `Environment variables` and add the below 2
-
-- `REACT_APP_CONNECT_REGION` = `AWS Region`  (Example `eu-west-2`)
-- `REACT_APP_CONNECT_INSTANCE_URL` = `Amazon Connect URL` (Example `https://<<INSTANCE_NAME>>.awsapps.com` or `https://<<INSTANCE_NAME>>.my.connect.aws`)
+- Click `Create new environment` for backend
+- Expand `Environment variables` and add the below 2
+  - `REACT_APP_CONNECT_REGION` = `AWS Region`  (Example `eu-west-2`)
+  - `REACT_APP_CONNECT_INSTANCE_URL` = `Amazon Connect URL` (Example `https://<<INSTANCE_NAME>>.awsapps.com` or `https://<<INSTANCE_NAME>>.my.connect.aws`)
 
 [Important, if you copy and paste, ensure there are no trailing whitespaces in the above 2 variable keys, or values. This will cause the web app to not load CCP and a rebuild will be required]
 
@@ -49,7 +48,7 @@ Once the app is ready, about 8 mins, you then need to update the allow list with
 * Goto `Approved origins` then `+ Add origin`
 * Enter the URL that Amplify generated for you, then click `Add`  (Example URL `https://main.d13aaabbbccc.amplifyapp.com`, if necessary remove the trailing '/')
 
-Testing
+### Testing
 
 * Login to the amplify web app, create an account, then login to Connect
 * Start a customer chat (Goto `https://<yourConnectInstanceURL>/connect/test-chat`)
