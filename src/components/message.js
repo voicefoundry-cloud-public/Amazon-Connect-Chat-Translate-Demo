@@ -9,4 +9,3 @@ const Message = ({ chat, user }) => (
 );
 
 export default Message;
-

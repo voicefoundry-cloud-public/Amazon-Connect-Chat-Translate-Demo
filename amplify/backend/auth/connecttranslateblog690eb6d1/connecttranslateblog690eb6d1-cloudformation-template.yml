@@ -280,7 +280,7 @@ Resources:
             - ' }'
             - '};'
       Handler: index.handler
-      Runtime: nodejs18.x
+      Runtime: nodejs16.x
       Timeout: '300'
       Role: !GetAtt UserPoolClientRole.Arn
     DependsOn: UserPoolClientRole
