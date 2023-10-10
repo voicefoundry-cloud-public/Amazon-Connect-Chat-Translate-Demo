@@ -1,37 +1,74 @@
 {
-  "hosting": {
-    "amplifyhosting": {
-      "service": "amplifyhosting",
+  "api": {
+    "amazonTranslateAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "amazonTranslateLambda"
+        }
+      ],
       "providerPlugin": "awscloudformation",
-      "type": "manual"
+      "service": "API Gateway"
     }
   },
   "auth": {
     "connecttranslateblog690eb6d1": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
+      "customAuth": false,
       "dependsOn": [],
-      "customAuth": false
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
     }
   },
-  "predictions": {
-    "translateText0519c50f": {
+  "custom": {
+    "environmentIntegration": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "postInstallScript"
+        },
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ],
       "providerPlugin": "awscloudformation",
-      "service": "Translate",
-      "convertType": "translateText"
-    },
-    "interpretTextcabd9d8d": {
-      "providerPlugin": "awscloudformation",
-      "service": "Comprehend",
-      "interpretType": "interpretText"
+      "service": "Custom::customhelper"
     }
   },
   "function": {
     "amazonTranslateLambda": {
       "build": true,
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
+      "service": "Lambda"
     },
     "postInstallScript": {
       "build": true,
@@ -39,19 +76,56 @@
       "service": "Lambda"
     }
   },
-  "custom": {
-    "environmentIntegration": {
-      "service": "Custom::customhelper",
+  "hosting": {
+    "amplifyhosting": {
       "providerPlugin": "awscloudformation",
-      "dependsOn": [
+      "service": "amplifyhosting",
+      "type": "manual"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_amazonTranslateLambda_deploymentBucketName": {
+      "usedBy": [
         {
           "category": "function",
-          "resourceName": "postInstallScript",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        },
+          "resourceName": "amazonTranslateLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_amazonTranslateLambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amazonTranslateLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_postInstallScript_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "postInstallScript"
+        }
+      ]
+    },
+    "AMPLIFY_function_postInstallScript_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "postInstallScript"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_appId": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_type": {
+      "usedBy": [
         {
           "category": "hosting",
           "resourceName": "amplifyhosting"
@@ -59,20 +133,16 @@
       ]
     }
   },
-  "api": {
-    "amazonTranslateAPI": {
-      "service": "API Gateway",
+  "predictions": {
+    "interpretTextcabd9d8d": {
+      "interpretType": "interpretText",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "amazonTranslateLambda",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
+      "service": "Comprehend"
+    },
+    "translateText0519c50f": {
+      "convertType": "translateText",
+      "providerPlugin": "awscloudformation",
+      "service": "Translate"
     }
   }
 }

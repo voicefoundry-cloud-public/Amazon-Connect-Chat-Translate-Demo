@@ -15,9 +15,9 @@ p {
 
 .App {
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  align-items: left;
+  justify-content: left;
 }
 
 .chatroom {
